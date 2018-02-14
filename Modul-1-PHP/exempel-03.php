@@ -60,8 +60,8 @@ echo "<br>";
 echo ucwords( strtolower($name) );
 echo "<br>";
 // eller
-$namn =  ucwords( strtolower($name) );
-echo $namn;
+$name =  ucwords( strtolower($name) );
+echo $name;
 echo "<br>";
 
 echo strrev($name);
