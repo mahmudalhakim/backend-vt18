@@ -24,7 +24,6 @@
     <?php
         // Fixa rätt tidszon 
         date_default_timezone_set('Europe/Stockholm');
-        setlocale( LC_TIME, 'sv_SE');  
         echo date("Y")     . '<br>';
         echo date("Y-m-d") . '<br>';
         echo date("Y m d") . '<br>';
