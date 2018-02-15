@@ -24,6 +24,7 @@
     <?php
         // Fixa rätt tidszon 
         date_default_timezone_set('Europe/Stockholm');
+        
         echo date("Y")     . '<br>';
         echo date("Y-m-d") . '<br>';
         echo date("Y m d") . '<br>';
@@ -35,7 +36,5 @@
         
     ?>
     </p>
-
-
 </body>
 </html>

@@ -97,7 +97,5 @@ echo "Min root är: ";
 echo $_SERVER["DOCUMENT_ROOT"];
 
 ?>
-
-<br><br><br><br><br><br><br><br>
 </body>
 </html>

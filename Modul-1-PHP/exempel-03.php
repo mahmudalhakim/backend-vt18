@@ -70,7 +70,5 @@ echo "<br>";
 echo strlen($name);
 
 ?>
-
-<br><br><br><br><br><br>
 </body>
 </html>
