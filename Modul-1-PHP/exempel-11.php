@@ -29,7 +29,7 @@
         $tal2 = $_GET['tal2'];
 
         echo "<h2>$tal1 + $tal2 = ";
-       // Anropa funktionen plus
+        // Anropa funktionen plus
         echo  plus($tal1, $tal2);
         echo "</h2>";
 
@@ -38,9 +38,4 @@
         echo  minus($tal1, $tal2);
         echo "</h2>";
     }
-    
-    
-    
-
-
 ?>
