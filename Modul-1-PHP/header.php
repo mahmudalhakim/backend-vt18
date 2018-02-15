@@ -1,3 +1,8 @@
+<?php
+    // Visa varningar och felmeddelanden
+    ini_set("display_errors" , 1);
+?>
+
 <!DOCTYPE html>
 <html lang="sv">
 <head>
