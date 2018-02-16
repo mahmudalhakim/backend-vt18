@@ -4,7 +4,13 @@
     session_start();
 ?>
 
-<h2>Ta bort en session</h2>
+
+<h2>Ta bort alla sessionsvariabler (unset)</h2>
+<?php
+    session_unset();
+?>
+
+<h2>Ta bort sessionen (destroy)</h2>
 <?php
     session_destroy();
 ?>
