@@ -13,6 +13,8 @@
 
 // Skapa en array
 $cars = array("Volvo", "BMW");
+// Alternativ syntax
+$cars = ["Volvo", "BMW"];
 
 // Lägg till ett element
 $cars[] = "Toyota";
@@ -21,7 +23,7 @@ $cars[] = "Toyota";
 echo "<p>Jag tycker om $cars[0] och $cars[2] </p>";
 
 // Skriv ut antal element
-echo count($cars);
+echo "Antal: " . count($cars);
 
 echo "<h2>Iterera över en array</h2>";
 echo "<h3>While-satsen</h3>";
@@ -95,6 +97,9 @@ echo "</pre>";
 
 echo "Min root är: ";
 echo $_SERVER["DOCUMENT_ROOT"];
+echo "<br>";
+echo "Den aktuella filen är: ";
+echo $_SERVER["PHP_SELF"];
 
 ?>
 </body>

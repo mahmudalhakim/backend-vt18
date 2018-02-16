@@ -56,18 +56,22 @@ echo "<br>";
 echo ucwords($name);
 echo "<br>";
 
-// Visa alltid inledande stor bokstav i varje ord.
-echo ucwords( strtolower($name) );
-echo "<br>";
-// eller
-$name =  ucwords( strtolower($name) );
-echo $name;
-echo "<br>";
-
 echo strrev($name);
 echo "<br>";
 
 echo strlen($name);
+echo "<br>";
+
+
+// Visa alltid inledande stor bokstav i varje ord.
+echo ucwords( strtolower($name) );
+echo "<br>";
+
+// Överkurs - Ett namn som innehåller -
+$name = "ANNA-maja"; // Konstigt format
+$name = ucwords( strtolower($name) ); // Anna-maja
+$name =  ucwords( $name , '-' ); // Stor bokstav på alla ord efter -
+echo $name; // Anna-Maja
 
 ?>
 </body>
