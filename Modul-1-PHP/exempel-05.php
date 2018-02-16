@@ -24,7 +24,8 @@
     <?php
         // Fixa rätt tidszon 
         date_default_timezone_set('Europe/Stockholm');
-        
+
+        //echo date("D j M o H.i",strtotime($date)); 
         echo date("Y")     . '<br>';
         echo date("Y-m-d") . '<br>';
         echo date("Y m d") . '<br>';
@@ -32,8 +33,13 @@
         echo date("M")     . '<br>';
         echo date("D")     . '<br>';
         echo date("H:i:s") . '<br>';
-        echo date("Y-m-d H:i:s");
-        
+        echo date("Y-m-d H:i:s") . '<br>';
+
+        // Överkurs
+        setlocale(LC_TIME, "sv_SE");
+        echo strftime("%A den %d %B %Y");
+        // Skriver ut t.ex. Fredag den 16 Februari 2018
+        // http://php.net/manual/en/function.strftime.php
     ?>
     </p>
 </body>
