@@ -18,8 +18,8 @@
     <h2>Kontakt</h2>
     <p>Webmaster: <?=WEBMASTER?></p>
     <p>Mobil: <?=MOBIL?></p>
-
-    <h2>Datum och tid</h2>
+    <hr>
+    <h1>Datum och tid</h1>
     <p>
     <?php
         // Fixa rätt tidszon 
