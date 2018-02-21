@@ -28,5 +28,10 @@
         </button>
     </form>
 
+    <?php
+      // Hämta tabellen från select.php
+      include('select.php');
+    ?>
+
   </body>
 </html>
