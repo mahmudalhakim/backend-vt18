@@ -1,7 +1,8 @@
 <?php
+// Visa varningar och felmeddelanden
+ini_set("display_errors",1);
 
 // Logga in i databasen!
-
 $dbHost = "localhost";
 $dbUser = "root";
 $dbPass = "root";
