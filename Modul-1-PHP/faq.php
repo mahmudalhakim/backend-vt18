@@ -7,8 +7,8 @@
 $array = array();
 // Eller
 $personer = [
-    ["Mahmud Al Hakim" , "mahmud@alhakim" , "45" ] ,
-    ["Kalle Anka" , "kalle@anka.se"   , "15"    ] ,
+    ["Mahmud Al Hakim" , "mahmud@alhakim" , 45 ] ,
+    ["Kalle Anka"      , "kalle@anka.se"  , 15 ] ,
 ];
 
 // Skriv ut allt
@@ -77,15 +77,8 @@ echo "</ul>";
 </h3>
 <?php endforeach; ?>
 
-
-
 <?php
-// Steg 4 
-// Skicka data till ett formulär
 
-
-
-// Steg 3
 
 
 
