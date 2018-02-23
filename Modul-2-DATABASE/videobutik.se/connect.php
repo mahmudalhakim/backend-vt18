@@ -13,4 +13,5 @@ if(!$connection){
     echo "<h1>Fel! <br>" . mysqli_connect_error() . "</h1>";
     exit;
 }
+// Vid problem med svenska tecken
 mysqli_set_charset($connection, "utf8"); 
