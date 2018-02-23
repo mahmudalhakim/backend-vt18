@@ -14,7 +14,7 @@ echo "</pre>";
 if(isset($_POST['email'])){
 
 // Skicka mail till mig (ägaren)
-$to      = "mahmud.alhakim@gmail.com";
+$to      = "Skriv ägarens e-post";
 $subject = "Ett meddelande från Backend";
 $message = "<h3>Hej Mahmud, detta är ett meddelande från ";
 $message .= $_POST['name'] . "<br>"; // från formuläret
