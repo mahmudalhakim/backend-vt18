@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Värd: 127.0.0.1
--- Tid vid skapande: 21 nov 2017 kl 14:04
--- Serverversion: 10.1.26-MariaDB
--- PHP-version: 7.1.8
+-- Värd: localhost:3306
+-- Tid vid skapande: 26 feb 2018 kl 07:08
+-- Serverversion: 5.6.38
+-- PHP-version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,28 +17,29 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Databas: `videobutik`
+-- Databas: videobutik
 --
 
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `film`
+-- Tabellstruktur film
 --
 
-CREATE TABLE `film` (
-  `filmID` int(5) NOT NULL,
-  `Titel` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Kategori` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Huvudroll` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Pris` int(5) NOT NULL
+DROP TABLE IF EXISTS film;
+CREATE TABLE film (
+  filmID int(5) NOT NULL,
+  Titel varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  Kategori varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  Huvudroll varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  Pris int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumpning av Data i tabell `film`
+-- Dumpning av Data i tabell film
 --
 
-INSERT INTO `film` (`filmID`, `Titel`, `Kategori`, `Huvudroll`, `Pris`) VALUES
+INSERT INTO film (filmID, Titel, Kategori, Huvudroll, Pris) VALUES
 (1, 'Braveheart', 'Action', 'Mel Gibson', 20),
 (2, 'Fucking Åmål', 'Drama', 'Lena Svensson', 30),
 (3, 'Matrix', 'Action', 'Keanu Reeves', 40),
@@ -95,22 +94,23 @@ INSERT INTO `film` (`filmID`, `Titel`, `Kategori`, `Huvudroll`, `Pris`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `kund`
+-- Tabellstruktur kund
 --
 
-CREATE TABLE `kund` (
-  `kundnummer` int(5) NOT NULL,
-  `namn` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `gatuadress` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `postnummer` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
-  `ort` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+DROP TABLE IF EXISTS kund;
+CREATE TABLE kund (
+  kundnummer int(5) NOT NULL,
+  namn varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  gatuadress varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  postnummer varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  ort varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumpning av Data i tabell `kund`
+-- Dumpning av Data i tabell kund
 --
 
-INSERT INTO `kund` (`kundnummer`, `namn`, `gatuadress`, `postnummer`, `ort`) VALUES
+INSERT INTO kund (kundnummer, namn, gatuadress, postnummer, ort) VALUES
 (1, 'Inge Danielsson', 'Poppelvägen 7', '11356', 'Stockholm'),
 (2, 'Bert Lindqvist', 'Notstigen 82', '12567', 'Stockholm'),
 (3, 'Lars Lundberg', 'Pärlegatan 4', '12578', 'Sollentuna'),
@@ -215,21 +215,22 @@ INSERT INTO `kund` (`kundnummer`, `namn`, `gatuadress`, `postnummer`, `ort`) VAL
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `uthyrning`
+-- Tabellstruktur uthyrning
 --
 
-CREATE TABLE `uthyrning` (
-  `Film` int(5) NOT NULL,
-  `Kund` int(5) NOT NULL,
-  `utDatum` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `inDatum` datetime NOT NULL
+DROP TABLE IF EXISTS uthyrning;
+CREATE TABLE uthyrning (
+  Film int(5) NOT NULL,
+  Kund int(5) NOT NULL,
+  utDatum datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  inDatum datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumpning av Data i tabell `uthyrning`
+-- Dumpning av Data i tabell uthyrning
 --
 
-INSERT INTO `uthyrning` (`Film`, `Kund`, `utDatum`, `inDatum`) VALUES
+INSERT INTO uthyrning (Film, Kund, utDatum, inDatum) VALUES
 (1, 10, '2017-11-10 00:00:00', '2017-11-17 00:00:00'),
 (5, 10, '2017-11-10 00:00:00', '0000-00-00 00:00:00'),
 (10, 20, '2017-11-10 00:00:00', '2017-11-17 00:00:00'),
@@ -247,31 +248,38 @@ INSERT INTO `uthyrning` (`Film`, `Kund`, `utDatum`, `inDatum`) VALUES
 --
 
 --
--- Index för tabell `film`
+-- Index för tabell film
 --
-ALTER TABLE `film`
-  ADD PRIMARY KEY (`filmID`);
+ALTER TABLE film
+  ADD PRIMARY KEY (filmID);
 
 --
--- Index för tabell `kund`
+-- Index för tabell kund
 --
-ALTER TABLE `kund`
-  ADD PRIMARY KEY (`kundnummer`);
+ALTER TABLE kund
+  ADD PRIMARY KEY (kundnummer);
+
+--
+-- Index för tabell uthyrning
+--
+ALTER TABLE uthyrning
+  ADD PRIMARY KEY (Film,Kund,utDatum);
 
 --
 -- AUTO_INCREMENT för dumpade tabeller
 --
 
 --
--- AUTO_INCREMENT för tabell `film`
+-- AUTO_INCREMENT för tabell film
 --
-ALTER TABLE `film`
-  MODIFY `filmID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+ALTER TABLE film
+  MODIFY filmID int(5) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT för tabell `kund`
+-- AUTO_INCREMENT för tabell kund
 --
-ALTER TABLE `kund`
-  MODIFY `kundnummer` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;COMMIT;
+ALTER TABLE kund
+  MODIFY kundnummer int(5) NOT NULL AUTO_INCREMENT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
