@@ -26,8 +26,7 @@ $array = json_decode($data , true);
 
 foreach($array as $key=>$value){
    echo "<a href='" .  $value['url'] . "' target='_blank'>";
-   echo '<img src="' .  $value['thumbnailUrl'] .
-          '" class="img-thumbnail" alt="">';
+   echo '<img src="' . $value['thumbnailUrl'] . '" class="img-thumbnail" alt="">';
    echo "</a>";
 }
 ?>
